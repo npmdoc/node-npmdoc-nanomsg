@@ -1,0 +1,3640 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/nickdesaulniers/node-nanomsg#readme">nanomsg (v3.3.0)</a>
+</h1>
+<h4>Node bindings for nanomsg</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nanomsg">module nanomsg</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket">
+            function <span class="apidocSignatureSpan">nanomsg.</span>Socket
+            <span class="apidocSignatureSpan">(type, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.createDevice">
+            function <span class="apidocSignatureSpan">nanomsg.</span>createDevice
+            <span class="apidocSignatureSpan">(sock1, sock2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.createSocket">
+            function <span class="apidocSignatureSpan">nanomsg.</span>createSocket
+            <span class="apidocSignatureSpan">(type, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.device">
+            function <span class="apidocSignatureSpan">nanomsg.</span>device
+            <span class="apidocSignatureSpan">(sock1, sock2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.socket">
+            function <span class="apidocSignatureSpan">nanomsg.</span>socket
+            <span class="apidocSignatureSpan">(type, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.symbol">
+            function <span class="apidocSignatureSpan">nanomsg.</span>symbol
+            <span class="apidocSignatureSpan">(symbol)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.symbolInfo">
+            function <span class="apidocSignatureSpan">nanomsg.</span>symbolInfo
+            <span class="apidocSignatureSpan">(symbol)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.term">
+            function <span class="apidocSignatureSpan">nanomsg.</span>term
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nanomsg.</span>Socket.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nanomsg.</span>_bindings</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nanomsg.</span>common</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nanomsg.Socket">module nanomsg.Socket</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.Socket">
+            function <span class="apidocSignatureSpan">nanomsg.</span>Socket
+            <span class="apidocSignatureSpan">(type, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.super_">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nanomsg.Socket.prototype">module nanomsg.Socket.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype._protect">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_protect
+            <span class="apidocSignatureSpan">(ret, unwind)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype._protectArray">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_protectArray
+            <span class="apidocSignatureSpan">(ret, unwind)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype._read">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_read
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype._receive">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_receive
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype._register">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_register
+            <span class="apidocSignatureSpan">(chan)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype._send">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_send
+            <span class="apidocSignatureSpan">(msg, flags)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype._startPollReceive">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_startPollReceive
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype._startPollSend">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_startPollSend
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype._stopPollReceive">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_stopPollReceive
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype._stopPollSend">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_stopPollSend
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype._write">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_write
+            <span class="apidocSignatureSpan">(buf, _, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.bind">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>bind
+            <span class="apidocSignatureSpan">(addr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.chan">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>chan
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.close">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.connect">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>connect
+            <span class="apidocSignatureSpan">(addr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.dontwait">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>dontwait
+            <span class="apidocSignatureSpan">(bool)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.flush">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>flush
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.getsockopt">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>getsockopt
+            <span class="apidocSignatureSpan">(level, option)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.ipv6">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>ipv6
+            <span class="apidocSignatureSpan">(bool)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.linger">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>linger
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.maxreconn">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>maxreconn
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.rcvbuf">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>rcvbuf
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.rcvmaxsize">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>rcvmaxsize
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.rcvprio">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>rcvprio
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.rcvtimeo">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>rcvtimeo
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.reconn">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>reconn
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.rmchan">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>rmchan
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.send">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>send
+            <span class="apidocSignatureSpan">(buf, flags)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.setsockopt">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>setsockopt
+            <span class="apidocSignatureSpan">(level, option, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.shutdown">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>shutdown
+            <span class="apidocSignatureSpan">(addr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.sndbuf">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>sndbuf
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.sndprio">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>sndprio
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.sndtimeo">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>sndtimeo
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.tcpnodelay">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>tcpnodelay
+            <span class="apidocSignatureSpan">(bool)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.Socket.prototype.wsopt">
+            function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>wsopt
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nanomsg._bindings">module nanomsg._bindings</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.Bind">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Bind
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.Chan">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Chan
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.Close">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.Connect">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Connect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.DeviceWorker">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>DeviceWorker
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.Err">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Err
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.Errno">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Errno
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.Getopt">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Getopt
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.PollSocket">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>PollSocket
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.PollStop">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>PollStop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.Recv">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Recv
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.Send">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Send
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.Setopt">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Setopt
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.Shutdown">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Shutdown
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.Socket">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Socket
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.Symbol">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Symbol
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.SymbolInfo">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>SymbolInfo
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg._bindings.Term">
+            function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Term
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>AF_SP</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>AF_SP_RAW</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EACCES</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EADDRINUSE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EADDRNOTAVAIL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EAFNOSUPPORT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EAGAIN</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EBADF</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ECONNABORTED</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ECONNREFUSED</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ECONNRESET</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EFAULT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EFSM</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EHOSTUNREACH</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EINPROGRESS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EINTR</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EINVAL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EMFILE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EMSGSIZE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ENAMETOOLONG</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ENETDOWN</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ENETRESET</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ENETUNREACH</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ENOBUFS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ENODEV</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ENOMEM</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ENOPROTOOPT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ENOTCONN</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ENOTSOCK</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ENOTSUP</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EPROTO</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>EPROTONOSUPPORT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ETERM</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>ETIMEDOUT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_BUS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_DOMAIN</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_DONTWAIT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_INPROC</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_IPC</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_IPV4ONLY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_LINGER</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_NS_DOMAIN</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_NS_ERROR</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_NS_EVENT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_NS_FLAG</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_NS_LIMIT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_NS_NAMESPACE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_NS_OPTION_LEVEL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_NS_OPTION_TYPE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_NS_OPTION_UNIT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_NS_PROTOCOL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_NS_SOCKET_OPTION</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_NS_STATISTIC</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_NS_TRANSPORT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_NS_TRANSPORT_OPTION</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_NS_VERSION</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_PAIR</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_POLLIN</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_POLLOUT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_PROTOCOL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_PUB</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_PULL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_PUSH</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_RCVBUF</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_RCVFD</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_RCVMAXSIZE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_RCVPRIO</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_RCVTIMEO</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_RECONNECT_IVL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_RECONNECT_IVL_MAX</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_REP</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_REQ</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_REQ_RESEND_IVL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_RESPONDENT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_SNDBUF</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_SNDFD</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_SNDPRIO</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_SNDTIMEO</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_SOCKADDR_MAX</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_SOCKET_NAME</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_SOL_SOCKET</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_STAT_ACCEPTED_CONNECTIONS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_STAT_ACCEPT_ERRORS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_STAT_BIND_ERRORS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_STAT_BROKEN_CONNECTIONS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_STAT_BYTES_RECEIVED</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_STAT_BYTES_SENT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_STAT_CONNECT_ERRORS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_STAT_CURRENT_CONNECTIONS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_STAT_CURRENT_EP_ERRORS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_STAT_CURRENT_SND_PRIORITY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_STAT_DROPPED_CONNECTIONS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_STAT_ESTABLISHED_CONNECTIONS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_STAT_INPROGRESS_CONNECTIONS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_STAT_MESSAGES_RECEIVED</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_STAT_MESSAGES_SENT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_SUB</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_SUB_SUBSCRIBE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_SUB_UNSUBSCRIBE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_SURVEYOR</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_SURVEYOR_DEADLINE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_TCP</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_TCP_NODELAY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_TYPE_INT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_TYPE_NONE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_TYPE_STR</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_UNIT_BOOLEAN</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_UNIT_BYTES</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_UNIT_COUNTER</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_UNIT_MESSAGES</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_UNIT_MILLISECONDS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_UNIT_NONE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_UNIT_PRIORITY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_VERSION_AGE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_VERSION_CURRENT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_VERSION_REVISION</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_WS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_WS_MSG_TYPE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_WS_MSG_TYPE_BINARY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nanomsg._bindings.</span>NN_WS_MSG_TYPE_TEXT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nanomsg._bindings.</span>path</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nanomsg.common">module nanomsg.common</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nanomsg.common.createMsg">
+            function <span class="apidocSignatureSpan">nanomsg.common.</span>createMsg
+            <span class="apidocSignatureSpan">(msgType, sz)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nanomsg" id="apidoc.module.nanomsg">module nanomsg</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket" id="apidoc.element.nanomsg.Socket">
+        function <span class="apidocSignatureSpan">nanomsg.</span>Socket
+        <span class="apidocSignatureSpan">(type, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Socket(type, opts) {
+
+    opts = opts || {};
+    this.af_domain = opts.raw ? nn.AF_SP_RAW : nn.AF_SP;
+    this.type = type;
+
+    switch(type) {
+        case 'req':
+            this.protocol = nn.NN_REQ;
+            this.sender=true;
+            this.receiver=true;
+            break;
+
+        case 'rep':
+            this.protocol = nn.NN_REP;
+            this.sender = true;
+            this.receiver = true;
+            break;
+
+        case 'pair':
+            this.protocol = nn.NN_PAIR;
+            this.sender = true;
+            this.receiver = true;
+            break;
+
+        case 'push':
+            this.protocol = nn.NN_PUSH;
+            this.sender = true;
+            this.receiver = false;
+            // nndontwait otherwise defaults true, PUSH socket default is false
+            opts.dontwait = opts.dontwait || false;
+            break;
+
+        case 'pull':
+            this.protocol = nn.NN_PULL;
+            this.sender = false;
+            this.receiver = true;
+            break;
+
+        case 'pub':
+            this.protocol = nn.NN_PUB;
+            this.sender = true;
+            this.receiver = false;
+            break;
+
+        case 'sub':
+            this.protocol = nn.NN_SUB;
+            this.sender = false;
+            this.receiver = true;
+            break;
+
+        case 'bus':
+            this.protocol = nn.NN_BUS;
+            this.sender = true;
+            this.receiver = true;
+            break;
+
+        case 'surveyor':
+            this.protocol = nn.NN_SURVEYOR;
+            this.sender = true;
+            this.receiver = false;
+            break;
+
+        case 'respondent':
+            this.protocol = nn.NN_RESPONDENT;
+            this.sender = true;
+            this.receiver = true;
+            break;
+
+        default:
+            throw new Error('unrecognised socket type ' + type);
+            break;
+    }
+
+  this.binding = nn.Socket(this.af_domain, this.protocol);
+  this.bound = {};
+  this.connected = {};
+  this.queue = [];
+
+<span class="apidocCodeCommentSpan">  /* async I/O option */
+</span>  this.dontwait('dontwait' in opts ? opts.dontwait : true);
+
+  /*  subscription filter control */
+  this.channels     = {};
+
+  /*  subscription handling at initialization  */
+  if (opts.hasOwnProperty('chan')) {
+    if (Array.isArray(opts.chan)) {
+      opts.chan.forEach(this._register.bind(this));
+    } else {
+      throw new TypeError('chan requires an Array');
+    }
+  } else if (type === 'sub') {
+    this._register(''); //default topic is an empty string
+  }
+
+  /* sockopt api handling at initialization */
+  for(var sokopt in sol){
+    if(opts.hasOwnProperty(sokopt)) this[sokopt](opts[sokopt]);
+  }
+
+  /* start listening for inbound messages */
+  if (this.af_domain === nn.AF_SP &amp;&amp; this.receiver) {
+    this._startPollReceive();
+  }
+
+  if (!opts.hasOwnProperty('objectMode')) {
+    // reduce the highwatermark from 16K msgs to 16msgs
+    // would be more useful if we have a backpressure mechanism
+    opts.objectMode = true;
+  }
+
+  Duplex.call(this, opts);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.createDevice" id="apidoc.element.nanomsg.createDevice">
+        function <span class="apidocSignatureSpan">nanomsg.</span>createDevice
+        <span class="apidocSignatureSpan">(sock1, sock2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createDevice(sock1, sock2) {
+    return new Device(sock1, sock2);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.createSocket" id="apidoc.element.nanomsg.createSocket">
+        function <span class="apidocSignatureSpan">nanomsg.</span>createSocket
+        <span class="apidocSignatureSpan">(type, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createSocket(type, opts) {
+    return new Socket(type, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.device" id="apidoc.element.nanomsg.device">
+        function <span class="apidocSignatureSpan">nanomsg.</span>device
+        <span class="apidocSignatureSpan">(sock1, sock2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createDevice(sock1, sock2) {
+    return new Device(sock1, sock2);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.socket" id="apidoc.element.nanomsg.socket">
+        function <span class="apidocSignatureSpan">nanomsg.</span>socket
+        <span class="apidocSignatureSpan">(type, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createSocket(type, opts) {
+    return new Socket(type, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* only tested on linux, so other platforms are explicitly excluded at the moment (any help testing other OS is welcome)
+
+### check it out:
+
+```js
+var nano = require('nanomsg');
+
+var pub = nano.<span class="apidocCodeKeywordSpan">socket</span>('pub');
+var sub = nano.socket('sub');
+
+var addr = 'tcp://127.0.0.1:7789'
+pub.bind(addr);
+sub.connect(addr);
+
+sub.on('data', function (buf) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.symbol" id="apidoc.element.nanomsg.symbol">
+        function <span class="apidocSignatureSpan">nanomsg.</span>symbol
+        <span class="apidocSignatureSpan">(symbol)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function symbol(symbol) {
+    return nn.Symbol(symbol);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.symbolInfo" id="apidoc.element.nanomsg.symbolInfo">
+        function <span class="apidocSignatureSpan">nanomsg.</span>symbolInfo
+        <span class="apidocSignatureSpan">(symbol)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function symbolInfo(symbol) {
+    return nn.SymbolInfo(symbol);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.term" id="apidoc.element.nanomsg.term">
+        function <span class="apidocSignatureSpan">nanomsg.</span>term
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function term() {
+    return nn.Term();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nanomsg.Socket" id="apidoc.module.nanomsg.Socket">module nanomsg.Socket</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.Socket" id="apidoc.element.nanomsg.Socket.Socket">
+        function <span class="apidocSignatureSpan">nanomsg.</span>Socket
+        <span class="apidocSignatureSpan">(type, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Socket(type, opts) {
+
+    opts = opts || {};
+    this.af_domain = opts.raw ? nn.AF_SP_RAW : nn.AF_SP;
+    this.type = type;
+
+    switch(type) {
+        case 'req':
+            this.protocol = nn.NN_REQ;
+            this.sender=true;
+            this.receiver=true;
+            break;
+
+        case 'rep':
+            this.protocol = nn.NN_REP;
+            this.sender = true;
+            this.receiver = true;
+            break;
+
+        case 'pair':
+            this.protocol = nn.NN_PAIR;
+            this.sender = true;
+            this.receiver = true;
+            break;
+
+        case 'push':
+            this.protocol = nn.NN_PUSH;
+            this.sender = true;
+            this.receiver = false;
+            // nndontwait otherwise defaults true, PUSH socket default is false
+            opts.dontwait = opts.dontwait || false;
+            break;
+
+        case 'pull':
+            this.protocol = nn.NN_PULL;
+            this.sender = false;
+            this.receiver = true;
+            break;
+
+        case 'pub':
+            this.protocol = nn.NN_PUB;
+            this.sender = true;
+            this.receiver = false;
+            break;
+
+        case 'sub':
+            this.protocol = nn.NN_SUB;
+            this.sender = false;
+            this.receiver = true;
+            break;
+
+        case 'bus':
+            this.protocol = nn.NN_BUS;
+            this.sender = true;
+            this.receiver = true;
+            break;
+
+        case 'surveyor':
+            this.protocol = nn.NN_SURVEYOR;
+            this.sender = true;
+            this.receiver = false;
+            break;
+
+        case 'respondent':
+            this.protocol = nn.NN_RESPONDENT;
+            this.sender = true;
+            this.receiver = true;
+            break;
+
+        default:
+            throw new Error('unrecognised socket type ' + type);
+            break;
+    }
+
+  this.binding = nn.Socket(this.af_domain, this.protocol);
+  this.bound = {};
+  this.connected = {};
+  this.queue = [];
+
+<span class="apidocCodeCommentSpan">  /* async I/O option */
+</span>  this.dontwait('dontwait' in opts ? opts.dontwait : true);
+
+  /*  subscription filter control */
+  this.channels     = {};
+
+  /*  subscription handling at initialization  */
+  if (opts.hasOwnProperty('chan')) {
+    if (Array.isArray(opts.chan)) {
+      opts.chan.forEach(this._register.bind(this));
+    } else {
+      throw new TypeError('chan requires an Array');
+    }
+  } else if (type === 'sub') {
+    this._register(''); //default topic is an empty string
+  }
+
+  /* sockopt api handling at initialization */
+  for(var sokopt in sol){
+    if(opts.hasOwnProperty(sokopt)) this[sokopt](opts[sokopt]);
+  }
+
+  /* start listening for inbound messages */
+  if (this.af_domain === nn.AF_SP &amp;&amp; this.receiver) {
+    this._startPollReceive();
+  }
+
+  if (!opts.hasOwnProperty('objectMode')) {
+    // reduce the highwatermark from 16K msgs to 16msgs
+    // would be more useful if we have a backpressure mechanism
+    opts.objectMode = true;
+  }
+
+  Duplex.call(this, opts);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.super_" id="apidoc.element.nanomsg.Socket.super_">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Duplex(options) {
+  if (!(this instanceof Duplex))
+    return new Duplex(options);
+
+  Readable.call(this, options);
+  Writable.call(this, options);
+
+  if (options &amp;&amp; options.readable === false)
+    this.readable = false;
+
+  if (options &amp;&amp; options.writable === false)
+    this.writable = false;
+
+  this.allowHalfOpen = true;
+  if (options &amp;&amp; options.allowHalfOpen === false)
+    this.allowHalfOpen = false;
+
+  this.once('end', onend);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nanomsg.Socket.prototype" id="apidoc.module.nanomsg.Socket.prototype">module nanomsg.Socket.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype._protect" id="apidoc.element.nanomsg.Socket.prototype._protect">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_protect
+        <span class="apidocSignatureSpan">(ret, unwind)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_protect = function (ret, unwind) {
+    if(ret &lt; 0) {
+        if (unwind) unwind.call(this);
+        this.emit('error', new Error(nn.Err()));
+        return null;
+    }
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype._protectArray" id="apidoc.element.nanomsg.Socket.prototype._protectArray">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_protectArray
+        <span class="apidocSignatureSpan">(ret, unwind)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_protectArray = function (ret, unwind) {
+    if(ret[0] &lt; 0) {
+        if (unwind) unwind.call(this);
+        this.emit('error', new Error(nn.Err()));
+        return null;
+    }
+    return ret[1];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype._read" id="apidoc.element.nanomsg.Socket.prototype._read">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_read
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_read = function (n) {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype._receive" id="apidoc.element.nanomsg.Socket.prototype._receive">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_receive
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_receive = function () {
+  if (this.closed){
+    this.push(null);
+    return;
+  }
+
+  var msg = nn.Recv(this.binding, this.nndontwait);
+
+  if(this.type === 'surveyor') {
+        if(msg &lt; 0 &amp;&amp; nn.Errno() === nn.EFSM) {
+            this._stopPollSend();
+            this._stopPollReceive();
+            return;
+        }
+    } else if(this.type === 'rep') {
+      this._stopPollReceive();
+    }
+  if (msg === -1) return;
+
+  if (this.restore &amp;&amp; typeof this.restore === 'function') msg = this.restore(msg);
+  this.push(msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype._register" id="apidoc.element.nanomsg.Socket.prototype._register">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_register
+        <span class="apidocSignatureSpan">(chan)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_register = function (chan){
+  if (this.channels.hasOwnProperty('')) {
+    this.rmchan('');
+    this._register(chan);
+  } else if (nn.Chan(this.binding, nn.NN_SUB_SUBSCRIBE, chan) !== -1) {
+    this.channels[chan] = true;
+  } else {
+    this.emit('error', new Error( nn.Err() + ' : ' + chan));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype._send" id="apidoc.element.nanomsg.Socket.prototype._send">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_send
+        <span class="apidocSignatureSpan">(msg, flags)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_send = function (msg, flags) {
+    if (this.closed) return;
+
+    if(this.type === 'surveyor' || this.type === 'rep') {
+        this._startPollReceive();
+    }
+
+    if (this.transform &amp;&amp; typeof this.transform === 'function') {
+      msg = this.transform(msg);
+    }
+    return this._protect(nn.Send(this.binding, msg, flags), function () {
+        this.queue.unshift([msg, flags]);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype._startPollReceive" id="apidoc.element.nanomsg.Socket.prototype._startPollReceive">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_startPollReceive
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_startPollReceive = function () {
+  if (!this._pollReceive) {
+    this._pollReceive = nn.PollSocket(this.binding, false, function (events) {
+      if (events) this._receive();
+    }.bind(this));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype._startPollSend" id="apidoc.element.nanomsg.Socket.prototype._startPollSend">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_startPollSend
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_startPollSend = function () {
+    if (!this._pollSend) {
+        this._pollSend = nn.PollSocket(this.binding, true, function (events) {
+            if (events) this.flush();
+        }.bind(this));
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype._stopPollReceive" id="apidoc.element.nanomsg.Socket.prototype._stopPollReceive">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_stopPollReceive
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_stopPollReceive = function () {
+    if (this._pollReceive) nn.PollStop(this._pollReceive);
+    this._pollReceive = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype._stopPollSend" id="apidoc.element.nanomsg.Socket.prototype._stopPollSend">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_stopPollSend
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_stopPollSend = function () {
+    if (this._pollSend) nn.PollStop(this._pollSend);
+    this._pollSend = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype._write" id="apidoc.element.nanomsg.Socket.prototype._write">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>_write
+        <span class="apidocSignatureSpan">(buf, _, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_write = function (buf, _, cb){
+  this.send(buf, this.nndontwait);
+  cb();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.bind" id="apidoc.element.nanomsg.Socket.prototype.bind">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>bind
+        <span class="apidocSignatureSpan">(addr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bind = function (addr) {
+  return this.bound[addr] = this._protect(nn.Bind( this.binding, addr ));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var nano = require('nanomsg');
+
+var pub = nano.socket('pub');
+var sub = nano.socket('sub');
+
+var addr = 'tcp://127.0.0.1:7789'
+pub.<span class="apidocCodeKeywordSpan">bind</span>(addr);
+sub.connect(addr);
+
+sub.on('data', function (buf) {
+  console.log(String(buf));
+  pub.close();
+  sub.close();
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.chan" id="apidoc.element.nanomsg.Socket.prototype.chan">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>chan
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chan = function (list) {
+  if (Array.isArray(list)) {
+    list.forEach(this._register.bind(this));
+  } else {
+    throw new TypeError('chan requires an Array');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `'rcvtimeo'` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvtimeoduration)
+* `'reconn'` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketreconnduration)
+* `'maxreconn'` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketmaxreconnduration)
+* `'sndprio'` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndpriopriority)
+* `'rcvprio'` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvpriopriority)
+* `'ipv6'` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketipv6boolean)
+* `'rcvmaxsize'` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketrcvmaxsizesize)
+* `'chan'` *(Array, default: `['']`)*: see [`socket.<span class="apidocCodeKeywordSpan">chan</span>(Array)`](
+https://github.com/nickdesaulniers/node-nanomsg#socketchanarray)
+* `'wsopt'` *(String, default: `'binary'`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketwsoptstr)
+* `'dontwait'` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
+nanomsg#socketdontwaitboolean)
+
+### socket.shutdown(address)
+
+*(Function, param: String)*: Removes an endpoint established  by calls to `bind()` or `connect()`. The nanomsg library will try
+to deliver any outstanding outbound messages to the endpoint for the time specified by `linger`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.close" id="apidoc.element.nanomsg.Socket.prototype.close">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+    if(!this.closed) {
+        // Prevent "Bad file descriptor" from recursively firing "error" event
+        this.closed_status = nn.Close(this.binding);
+        this.closed = true;
+
+        this._stopPollSend();
+        this._stopPollReceive();
+
+        this.emit('close');
+
+        return this.closed_status;
+    }
+
+    // TODO: AJS: in the event of multiple close, we remember
+    // the return code from the first valid close, and return
+    // it for all subsequent close attempts. This appears to be
+    // in the spirit of the original author's intention, but
+    // perhaps it would be better to return EBADF or some other
+    // error?
+    return this.closed_status;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var addr = 'tcp://127.0.0.1:7789'
+pub.bind(addr);
+sub.connect(addr);
+
+sub.on('data', function (buf) {
+  console.log(String(buf));
+  pub.<span class="apidocCodeKeywordSpan">close</span>();
+  sub.close();
+});
+
+setTimeout(function () {
+  pub.send("Hello from nanomsg!");
+}, 100);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.connect" id="apidoc.element.nanomsg.Socket.prototype.connect">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>connect
+        <span class="apidocSignatureSpan">(addr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (addr) {
+  return this.connected[addr] = this._protect(nn.Connect( this.binding, addr ));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var nano = require('nanomsg');
+
+var pub = nano.socket('pub');
+var sub = nano.socket('sub');
+
+var addr = 'tcp://127.0.0.1:7789'
+pub.bind(addr);
+sub.<span class="apidocCodeKeywordSpan">connect</span>(addr);
+
+sub.on('data', function (buf) {
+  console.log(String(buf));
+  pub.close();
+  sub.close();
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.dontwait" id="apidoc.element.nanomsg.Socket.prototype.dontwait">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>dontwait
+        <span class="apidocSignatureSpan">(bool)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dontwait = function (bool) {
+  if (arguments.length) {
+    if(bool){
+      this.nndontwait = nn.NN_DONTWAIT;
+      return true;
+    } else {
+      this.nndontwait = 0;
+      return false;
+    }
+  } else {
+    return Boolean(this.nndontwait);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `'maxreconn'` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketmaxreconnduration)
+* `'sndprio'` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndpriopriority)
+* `'rcvprio'` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvpriopriority)
+* `'ipv6'` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketipv6boolean)
+* `'rcvmaxsize'` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketrcvmaxsizesize)
+* `'chan'` *(Array, default: `['']`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketchanarray)
+* `'wsopt'` *(String, default: `'binary'`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketwsoptstr)
+* `'dontwait'` *(boolean, default: `true`)*: see [`socket.<span class="apidocCodeKeywordSpan">dontwait</span>(boolean)`](
+https://github.com/nickdesaulniers/node-nanomsg#socketdontwaitboolean)
+
+### socket.shutdown(address)
+
+*(Function, param: String)*: Removes an endpoint established  by calls to `bind()` or `connect()`. The nanomsg library will try
+to deliver any outstanding outbound messages to the endpoint for the time specified by `linger`.
+
+```js
+socket.shutdown('tcp://127.0.0.1:5555');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.flush" id="apidoc.element.nanomsg.Socket.prototype.flush">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>flush
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flush = function () {
+    while(this.queue.length) {
+        var entry = this.queue.shift();
+        this._send(entry[0], Number(entry[1]) || 0);
+    }
+    this._stopPollSend();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var i = 0;
+s.on('data', function (data) {
+    assert.equal(data.length, sz);
+    var nbytes = s.send(data);
+    assert.equal(nbytes, sz);
+    if (++i === rts) {
+        s.<span class="apidocCodeKeywordSpan">flush</span>();
+        s.close();
+    }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.getsockopt" id="apidoc.element.nanomsg.Socket.prototype.getsockopt">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>getsockopt
+        <span class="apidocSignatureSpan">(level, option)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getsockopt = function (level, option) {
+    return this._protectArray(nn.Getsockopt(this.binding, level, option));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.ipv6" id="apidoc.element.nanomsg.Socket.prototype.ipv6">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>ipv6
+        <span class="apidocSignatureSpan">(bool)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ipv6 = function (bool) {
+  if(arguments.length){
+    if(bool){
+      if(nn.Setopt(this.binding, nn.NN_SOL_SOCKET, sol.ipv6, 0) &gt; -1)
+        return true;
+      throw new Error(nn.Err() + ': '+this.type + ' ipv6@activing\n');
+    } else {
+      if(nn.Setopt(this.binding, nn.NN_SOL_SOCKET, sol.ipv6, 1) &gt; -1)
+        return false;
+      throw new Error(nn.Err() + ': '+this.type+' ipv6@deactiving\n');
+    }
+  } else {
+    switch(nn.Getopt(this.binding, nn.NN_SOL_SOCKET, sol.ipv6)){
+      case 1: return false;
+      case 0: return true;
+      default:
+        throw new Error(nn.Err() +': '+this.type+' ipv6@getsockopt\n');
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `'rcvbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketrcvbufsize)
+* `'sndtimeo'` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndtimeoduration)
+* `'rcvtimeo'` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvtimeoduration)
+* `'reconn'` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketreconnduration)
+* `'maxreconn'` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketmaxreconnduration)
+* `'sndprio'` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndpriopriority)
+* `'rcvprio'` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvpriopriority)
+* `'ipv6'` *(Boolean, default: `false`)*: see [`socket.<span class="apidocCodeKeywordSpan">ipv6</span>(boolean)`](https
+://github.com/nickdesaulniers/node-nanomsg#socketipv6boolean)
+* `'rcvmaxsize'` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketrcvmaxsizesize)
+* `'chan'` *(Array, default: `['']`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketchanarray)
+* `'wsopt'` *(String, default: `'binary'`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketwsoptstr)
+* `'dontwait'` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
+nanomsg#socketdontwaitboolean)
+
+### socket.shutdown(address)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.linger" id="apidoc.element.nanomsg.Socket.prototype.linger">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>linger
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">linger = function (value) {
+  if (typeof value === 'undefined') {
+    return nn.Getopt(this.binding, nn.NN_SOL_SOCKET, sol[option]);
+  }
+
+  if(nn.Setopt(this.binding, nn.NN_SOL_SOCKET, sol[option], value) &gt; -1) {
+    return true;
+  }
+
+  throw new Error(nn.Err() + ': ' + this.type + option + '@' + value + '\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+#### `options`
+* `'raw'` *(Boolean, default: `false`)*: determines the domain of the socket. `AF_SP`, the default, creates a standard
+ full-blown SP socket. `AF_SP_RAW` family sockets operate over internal network protocols and interfaces. Raw sockets omit the end
+-to-end functionality found in `AF_SP` sockets and thus can be used to implement intermediary devices in SP topologies, see [nanomsg
+ docs](http://nanomsg.org/v0.5/nn_socket.3.html) or consult your man page entry `socket(2)` for more info.
+```js
+//ex. starting raw sockets
+nano.socket('bus', { raw: true } );
+```
+* `'tcpnodelay'` *(Boolean, default: `false`)*: see [`socket.tcpnodelay(boolean)`](https://github.com/nickdesaulniers/
+node-nanomsg#sockettcpnodelayboolean)
+* `'linger'` *(Number, default: `1000`)*: see [`socket.<span class="apidocCodeKeywordSpan">linger</span>(duration)`](https
+://github.com/nickdesaulniers/node-nanomsg#socketlingerduration)
+* `'sndbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketsndbufsize)
+* `'rcvbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketrcvbufsize)
+* `'sndtimeo'` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndtimeoduration)
+* `'rcvtimeo'` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvtimeoduration)
+* `'reconn'` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketreconnduration)
+* `'maxreconn'` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketmaxreconnduration)
+* `'sndprio'` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndpriopriority)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.maxreconn" id="apidoc.element.nanomsg.Socket.prototype.maxreconn">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>maxreconn
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">maxreconn = function (value) {
+  if (typeof value === 'undefined') {
+    return nn.Getopt(this.binding, nn.NN_SOL_SOCKET, sol[option]);
+  }
+
+  if(nn.Setopt(this.binding, nn.NN_SOL_SOCKET, sol[option], value) &gt; -1) {
+    return true;
+  }
+
+  throw new Error(nn.Err() + ': ' + this.type + option + '@' + value + '\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `'tcpnodelay'` *(Boolean, default: `false`)*: see [`socket.tcpnodelay(boolean)`](https://github.com/nickdesaulniers/
+node-nanomsg#sockettcpnodelayboolean)
+* `'linger'` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketlingerduration)
+* `'sndbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketsndbufsize)
+* `'rcvbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketrcvbufsize)
+* `'sndtimeo'` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndtimeoduration)
+* `'rcvtimeo'` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvtimeoduration)
+* `'reconn'` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketreconnduration)
+* `'maxreconn'` *(Number, default: `0`)*: see [`socket.<span class="apidocCodeKeywordSpan">maxreconn</span>(duration)`](
+https://github.com/nickdesaulniers/node-nanomsg#socketmaxreconnduration)
+* `'sndprio'` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndpriopriority)
+* `'rcvprio'` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvpriopriority)
+* `'ipv6'` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketipv6boolean)
+* `'rcvmaxsize'` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketrcvmaxsizesize)
+* `'chan'` *(Array, default: `['']`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketchanarray)
+* `'wsopt'` *(String, default: `'binary'`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketwsoptstr)
+* `'dontwait'` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
+nanomsg#socketdontwaitboolean)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.rcvbuf" id="apidoc.element.nanomsg.Socket.prototype.rcvbuf">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>rcvbuf
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rcvbuf = function (value) {
+  if (typeof value === 'undefined') {
+    return nn.Getopt(this.binding, nn.NN_SOL_SOCKET, sol[option]);
+  }
+
+  if(nn.Setopt(this.binding, nn.NN_SOL_SOCKET, sol[option], value) &gt; -1) {
+    return true;
+  }
+
+  throw new Error(nn.Err() + ': ' + this.type + option + '@' + value + '\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+//ex. starting raw sockets
+nano.socket('bus', { raw: true } );
+```
+* `'tcpnodelay'` *(Boolean, default: `false`)*: see [`socket.tcpnodelay(boolean)`](https://github.com/nickdesaulniers/
+node-nanomsg#sockettcpnodelayboolean)
+* `'linger'` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketlingerduration)
+* `'sndbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketsndbufsize)
+* `'rcvbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.<span class="apidocCodeKeywordSpan">rcvbuf</span>(size)`](https://github.com/nickdesaulniers/node-nanomsg#socketrcvbufsize)
+* `'sndtimeo'` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndtimeoduration)
+* `'rcvtimeo'` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvtimeoduration)
+* `'reconn'` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketreconnduration)
+* `'maxreconn'` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketmaxreconnduration)
+* `'sndprio'` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndpriopriority)
+* `'rcvprio'` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvpriopriority)
+* `'ipv6'` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketipv6boolean)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.rcvmaxsize" id="apidoc.element.nanomsg.Socket.prototype.rcvmaxsize">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>rcvmaxsize
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rcvmaxsize = function (value) {
+  if (typeof value === 'undefined') {
+    return nn.Getopt(this.binding, nn.NN_SOL_SOCKET, sol[option]);
+  }
+
+  if(nn.Setopt(this.binding, nn.NN_SOL_SOCKET, sol[option], value) &gt; -1) {
+    return true;
+  }
+
+  throw new Error(nn.Err() + ': ' + this.type + option + '@' + value + '\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `'sndtimeo'` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndtimeoduration)
+* `'rcvtimeo'` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvtimeoduration)
+* `'reconn'` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketreconnduration)
+* `'maxreconn'` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketmaxreconnduration)
+* `'sndprio'` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndpriopriority)
+* `'rcvprio'` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvpriopriority)
+* `'ipv6'` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketipv6boolean)
+* `'rcvmaxsize'` *(Number, default: `false`)*: see [`socket.<span class="apidocCodeKeywordSpan">rcvmaxsize</span>(size
+)`](https://github.com/nickdesaulniers/node-nanomsg#socketrcvmaxsizesize)
+* `'chan'` *(Array, default: `['']`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketchanarray)
+* `'wsopt'` *(String, default: `'binary'`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketwsoptstr)
+* `'dontwait'` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
+nanomsg#socketdontwaitboolean)
+
+### socket.shutdown(address)
+
+*(Function, param: String)*: Removes an endpoint established  by calls to `bind()` or `connect()`. The nanomsg library will try
+to deliver any outstanding outbound messages to the endpoint for the time specified by `linger`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.rcvprio" id="apidoc.element.nanomsg.Socket.prototype.rcvprio">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>rcvprio
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rcvprio = function (value) {
+  if (typeof value === 'undefined') {
+    return nn.Getopt(this.binding, nn.NN_SOL_SOCKET, sol[option]);
+  }
+
+  if(nn.Setopt(this.binding, nn.NN_SOL_SOCKET, sol[option], value) &gt; -1) {
+    return true;
+  }
+
+  throw new Error(nn.Err() + ': ' + this.type + option + '@' + value + '\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `'sndbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketsndbufsize)
+* `'rcvbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketrcvbufsize)
+* `'sndtimeo'` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndtimeoduration)
+* `'rcvtimeo'` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvtimeoduration)
+* `'reconn'` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketreconnduration)
+* `'maxreconn'` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketmaxreconnduration)
+* `'sndprio'` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndpriopriority)
+* `'rcvprio'` *(Number, default: `0`)*: see [`socket.<span class="apidocCodeKeywordSpan">rcvprio</span>(priority)`](https
+://github.com/nickdesaulniers/node-nanomsg#socketrcvpriopriority)
+* `'ipv6'` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketipv6boolean)
+* `'rcvmaxsize'` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketrcvmaxsizesize)
+* `'chan'` *(Array, default: `['']`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketchanarray)
+* `'wsopt'` *(String, default: `'binary'`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketwsoptstr)
+* `'dontwait'` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
+nanomsg#socketdontwaitboolean)
+
+### socket.shutdown(address)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.rcvtimeo" id="apidoc.element.nanomsg.Socket.prototype.rcvtimeo">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>rcvtimeo
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rcvtimeo = function (value) {
+  if (typeof value === 'undefined') {
+    return nn.Getopt(this.binding, nn.NN_SOL_SOCKET, sol[option]);
+  }
+
+  if(nn.Setopt(this.binding, nn.NN_SOL_SOCKET, sol[option], value) &gt; -1) {
+    return true;
+  }
+
+  throw new Error(nn.Err() + ': ' + this.type + option + '@' + value + '\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+nano.socket('bus', { raw: true } );
+```
+* `'tcpnodelay'` *(Boolean, default: `false`)*: see [`socket.tcpnodelay(boolean)`](https://github.com/nickdesaulniers/
+node-nanomsg#sockettcpnodelayboolean)
+* `'linger'` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketlingerduration)
+* `'sndbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketsndbufsize)
+* `'rcvbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketrcvbufsize)
+* `'sndtimeo'` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndtimeoduration)
+* `'rcvtimeo'` *(Number, default: `-1`)*: see [`socket.<span class="apidocCodeKeywordSpan">rcvtimeo</span>(duration)`](
+https://github.com/nickdesaulniers/node-nanomsg#socketrcvtimeoduration)
+* `'reconn'` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketreconnduration)
+* `'maxreconn'` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketmaxreconnduration)
+* `'sndprio'` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndpriopriority)
+* `'rcvprio'` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvpriopriority)
+* `'ipv6'` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketipv6boolean)
+* `'rcvmaxsize'` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketrcvmaxsizesize)
+* `'chan'` *(Array, default: `['']`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketchanarray)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.reconn" id="apidoc.element.nanomsg.Socket.prototype.reconn">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>reconn
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reconn = function (value) {
+  if (typeof value === 'undefined') {
+    return nn.Getopt(this.binding, nn.NN_SOL_SOCKET, sol[option]);
+  }
+
+  if(nn.Setopt(this.binding, nn.NN_SOL_SOCKET, sol[option], value) &gt; -1) {
+    return true;
+  }
+
+  throw new Error(nn.Err() + ': ' + this.type + option + '@' + value + '\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+* `'tcpnodelay'` *(Boolean, default: `false`)*: see [`socket.tcpnodelay(boolean)`](https://github.com/nickdesaulniers/
+node-nanomsg#sockettcpnodelayboolean)
+* `'linger'` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketlingerduration)
+* `'sndbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketsndbufsize)
+* `'rcvbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketrcvbufsize)
+* `'sndtimeo'` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndtimeoduration)
+* `'rcvtimeo'` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvtimeoduration)
+* `'reconn'` *(Number, default: `100`)*: see [`socket.<span class="apidocCodeKeywordSpan">reconn</span>(duration)`](https
+://github.com/nickdesaulniers/node-nanomsg#socketreconnduration)
+* `'maxreconn'` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketmaxreconnduration)
+* `'sndprio'` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndpriopriority)
+* `'rcvprio'` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvpriopriority)
+* `'ipv6'` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketipv6boolean)
+* `'rcvmaxsize'` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketrcvmaxsizesize)
+* `'chan'` *(Array, default: `['']`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketchanarray)
+* `'wsopt'` *(String, default: `'binary'`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketwsoptstr)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.rmchan" id="apidoc.element.nanomsg.Socket.prototype.rmchan">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>rmchan
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rmchan = function () {
+  var i = arguments.length;
+  while(i--) {
+    if (this.channels[arguments[i]]) {
+      if (nn.Chan(this.binding, nn.NN_SUB_UNSUBSCRIBE, arguments[i]) &gt; -1) {
+        delete this.channels[arguments[i]];
+      } else {
+        this.emit('error', new Error( nn.Err() + ' : ' + chan));
+      }
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+*(Function, param: Array of Strings, default: `['']`)*: Allows for sub sockets
+to filter messages based on a prefix. Not applicable to non sub sockets.
+
+By default, all sub sockets are subscribed to the `''` channel.  Once you opt
+in to filtering on a channel, you are unsubscribed from `''`.
+
+### socket.<span class="apidocCodeKeywordSpan">rmchan</span>(String)
+
+*(Function, param: String)*: Allows for sub sockets to remove channel filters.
+Not applicable to non sub sockets. This function is variadic; you can pass
+multiple strings and all will be unfiltered.
+
+If you unsubscribe from the default channel, `''`, without subscribing to any
+new channels, your sub socket will stop receiving messages.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.send" id="apidoc.element.nanomsg.Socket.prototype.send">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>send
+        <span class="apidocSignatureSpan">(buf, flags)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (buf, flags) {
+    this.queue.push([buf, flags]);
+    this._startPollSend();
+    return buf.length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+sub.on('data', function (buf) {
+  console.log(String(buf));
+  pub.close();
+  sub.close();
+});
+
+setTimeout(function () {
+  pub.<span class="apidocCodeKeywordSpan">send</span>("Hello from nanomsg!");
+}, 100);
+```
+
+# API
+
+### nano.socket(type, [options,])
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.setsockopt" id="apidoc.element.nanomsg.Socket.prototype.setsockopt">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>setsockopt
+        <span class="apidocSignatureSpan">(level, option, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setsockopt = function (level, option, value) {
+    return this._protect(nn.Setsockopt(this.binding, level, option, value));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.shutdown" id="apidoc.element.nanomsg.Socket.prototype.shutdown">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>shutdown
+        <span class="apidocSignatureSpan">(addr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shutdown = function (addr) {
+  var eid;
+  if (this.bound.hasOwnProperty(addr)) {
+    eid = this.bound[addr];
+    delete this.bound[addr];
+    return this._protect(nn.Shutdown(this.binding, eid));
+  } else if (this.connected.hasOwnProperty(addr)) {
+    eid = this.connected[addr];
+    delete this.connected[addr];
+    return this._protect(nn.Shutdown(this.binding, eid));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `'rcvprio'` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvpriopriority)
+* `'ipv6'` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketipv6boolean)
+* `'rcvmaxsize'` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketrcvmaxsizesize)
+* `'chan'` *(Array, default: `['']`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketchanarray)
+* `'wsopt'` *(String, default: `'binary'`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketwsoptstr)
+* `'dontwait'` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
+nanomsg#socketdontwaitboolean)
+
+### socket.<span class="apidocCodeKeywordSpan">shutdown</span>(address)
+
+*(Function, param: String)*: Removes an endpoint established  by calls to `bind()` or `connect()`. The nanomsg library will try
+to deliver any outstanding outbound messages to the endpoint for the time specified by `linger`.
+
+```js
+socket.shutdown('tcp://127.0.0.1:5555');
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.sndbuf" id="apidoc.element.nanomsg.Socket.prototype.sndbuf">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>sndbuf
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sndbuf = function (value) {
+  if (typeof value === 'undefined') {
+    return nn.Getopt(this.binding, nn.NN_SOL_SOCKET, sol[option]);
+  }
+
+  if(nn.Setopt(this.binding, nn.NN_SOL_SOCKET, sol[option], value) &gt; -1) {
+    return true;
+  }
+
+  throw new Error(nn.Err() + ': ' + this.type + option + '@' + value + '\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `'raw'` *(Boolean, default: `false`)*: determines the domain of the socket. `AF_SP`, the default, creates a standard
+ full-blown SP socket. `AF_SP_RAW` family sockets operate over internal network protocols and interfaces. Raw sockets omit the end
+-to-end functionality found in `AF_SP` sockets and thus can be used to implement intermediary devices in SP topologies, see [nanomsg
+ docs](http://nanomsg.org/v0.5/nn_socket.3.html) or consult your man page entry `socket(2)` for more info.
+```js
+//ex. starting raw sockets
+nano.socket('bus', { raw: true } );
+```
+* `'tcpnodelay'` *(Boolean, default: `false`)*: see [`socket.tcpnodelay(boolean)`](https://github.com/nickdesaulniers/
+node-nanomsg#sockettcpnodelayboolean)
+* `'linger'` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketlingerduration)
+* `'sndbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.<span class="apidocCodeKeywordSpan">sndbuf</span>(size)`](https://github.com/nickdesaulniers/node-nanomsg#socketsndbufsize)
+* `'rcvbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketrcvbufsize)
+* `'sndtimeo'` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndtimeoduration)
+* `'rcvtimeo'` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvtimeoduration)
+* `'reconn'` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketreconnduration)
+* `'maxreconn'` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketmaxreconnduration)
+* `'sndprio'` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndpriopriority)
+* `'rcvprio'` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvpriopriority)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.sndprio" id="apidoc.element.nanomsg.Socket.prototype.sndprio">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>sndprio
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sndprio = function (value) {
+  if (typeof value === 'undefined') {
+    return nn.Getopt(this.binding, nn.NN_SOL_SOCKET, sol[option]);
+  }
+
+  if(nn.Setopt(this.binding, nn.NN_SOL_SOCKET, sol[option], value) &gt; -1) {
+    return true;
+  }
+
+  throw new Error(nn.Err() + ': ' + this.type + option + '@' + value + '\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `'linger'` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketlingerduration)
+* `'sndbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketsndbufsize)
+* `'rcvbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketrcvbufsize)
+* `'sndtimeo'` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndtimeoduration)
+* `'rcvtimeo'` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvtimeoduration)
+* `'reconn'` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketreconnduration)
+* `'maxreconn'` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketmaxreconnduration)
+* `'sndprio'` *(Number, default: `0`)*: see [`socket.<span class="apidocCodeKeywordSpan">sndprio</span>(priority)`](https
+://github.com/nickdesaulniers/node-nanomsg#socketsndpriopriority)
+* `'rcvprio'` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvpriopriority)
+* `'ipv6'` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketipv6boolean)
+* `'rcvmaxsize'` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketrcvmaxsizesize)
+* `'chan'` *(Array, default: `['']`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketchanarray)
+* `'wsopt'` *(String, default: `'binary'`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketwsoptstr)
+* `'dontwait'` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
+nanomsg#socketdontwaitboolean)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.sndtimeo" id="apidoc.element.nanomsg.Socket.prototype.sndtimeo">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>sndtimeo
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sndtimeo = function (value) {
+  if (typeof value === 'undefined') {
+    return nn.Getopt(this.binding, nn.NN_SOL_SOCKET, sol[option]);
+  }
+
+  if(nn.Setopt(this.binding, nn.NN_SOL_SOCKET, sol[option], value) &gt; -1) {
+    return true;
+  }
+
+  throw new Error(nn.Err() + ': ' + this.type + option + '@' + value + '\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+//ex. starting raw sockets
+nano.socket('bus', { raw: true } );
+```
+* `'tcpnodelay'` *(Boolean, default: `false`)*: see [`socket.tcpnodelay(boolean)`](https://github.com/nickdesaulniers/
+node-nanomsg#sockettcpnodelayboolean)
+* `'linger'` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketlingerduration)
+* `'sndbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketsndbufsize)
+* `'rcvbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketrcvbufsize)
+* `'sndtimeo'` *(Number, default: `-1`)*: see [`socket.<span class="apidocCodeKeywordSpan">sndtimeo</span>(duration)`](
+https://github.com/nickdesaulniers/node-nanomsg#socketsndtimeoduration)
+* `'rcvtimeo'` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvtimeoduration)
+* `'reconn'` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketreconnduration)
+* `'maxreconn'` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketmaxreconnduration)
+* `'sndprio'` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndpriopriority)
+* `'rcvprio'` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvpriopriority)
+* `'ipv6'` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketipv6boolean)
+* `'rcvmaxsize'` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketrcvmaxsizesize)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.tcpnodelay" id="apidoc.element.nanomsg.Socket.prototype.tcpnodelay">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>tcpnodelay
+        <span class="apidocSignatureSpan">(bool)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tcpnodelay = function (bool) {
+  if(arguments.length){
+    if(bool){
+      if(nn.Setopt(this.binding, nn.NN_TCP, nn.NN_TCP_NODELAY, 1) &gt; -1)
+        return true;
+      throw new Error(nn.Err() + ': '+this.type + ' nodelay@activing\n');
+    } else {
+      if(nn.Setopt(this.binding, nn.NN_TCP, nn.NN_TCP_NODELAY, 0) &gt; -1)
+        return false;
+      throw new Error(nn.Err() + ': '+this.type+' nodelay@deactiving\n');
+    }
+  } else {
+    switch(nn.Getopt(this.binding, nn.NN_TCP, nn.NN_TCP_NODELAY)){
+      case 1: return true;
+      case 0: return false;
+      default:
+        throw new Error(nn.Err() +': '+this.type+' nodelay@getsockopt\n');
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### `options`
+* `'raw'` *(Boolean, default: `false`)*: determines the domain of the socket. `AF_SP`, the default, creates a standard
+ full-blown SP socket. `AF_SP_RAW` family sockets operate over internal network protocols and interfaces. Raw sockets omit the end
+-to-end functionality found in `AF_SP` sockets and thus can be used to implement intermediary devices in SP topologies, see [nanomsg
+ docs](http://nanomsg.org/v0.5/nn_socket.3.html) or consult your man page entry `socket(2)` for more info.
+```js
+//ex. starting raw sockets
+nano.socket('bus', { raw: true } );
+```
+* `'tcpnodelay'` *(Boolean, default: `false`)*: see [`socket.<span class="apidocCodeKeywordSpan">tcpnodelay</span>(boolean
+)`](https://github.com/nickdesaulniers/node-nanomsg#sockettcpnodelayboolean)
+* `'linger'` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketlingerduration)
+* `'sndbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketsndbufsize)
+* `'rcvbuf'` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
+/node-nanomsg#socketrcvbufsize)
+* `'sndtimeo'` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndtimeoduration)
+* `'rcvtimeo'` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvtimeoduration)
+* `'reconn'` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketreconnduration)
+* `'maxreconn'` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketmaxreconnduration)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.Socket.prototype.wsopt" id="apidoc.element.nanomsg.Socket.prototype.wsopt">
+        function <span class="apidocSignatureSpan">nanomsg.Socket.prototype.</span>wsopt
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wsopt = function (str) {
+  if (arguments.length) {
+    var wsopt = {
+      text   : nn.NN_WS_MSG_TYPE_TEXT,
+      binary : nn.NN_WS_MSG_TYPE_BINARY,
+    }
+    if (nn.Setopt(this.binding, nn.NN_WS, nn.NN_WS_MSG_TYPE, wsopt[str]) &gt; -1)
+      return true;
+    throw new Error(nn.Err() + ': '+this.type + ' wsopt@'+ str + '\n');
+  } else {
+    switch(nn.Getopt(this.binding, nn.NN_WS, nn.NN_WS_MSG_TYPE)){
+      case 0x01: return 'text';
+      case 0x02: return 'binary';
+      default:
+        throw new Error(nn.Err() +': '+ this.type + ' wsopt@getsockopt\n');
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `'reconn'` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketreconnduration)
+* `'maxreconn'` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketmaxreconnduration)
+* `'sndprio'` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketsndpriopriority)
+* `'rcvprio'` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketrcvpriopriority)
+* `'ipv6'` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketipv6boolean)
+* `'rcvmaxsize'` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
+-nanomsg#socketrcvmaxsizesize)
+* `'chan'` *(Array, default: `['']`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
+#socketchanarray)
+* `'wsopt'` *(String, default: `'binary'`)*: see [`socket.<span class="apidocCodeKeywordSpan">wsopt</span>(str
+)`](https://github.com/nickdesaulniers/node-nanomsg#socketwsoptstr)
+* `'dontwait'` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
+nanomsg#socketdontwaitboolean)
+
+### socket.shutdown(address)
+
+*(Function, param: String)*: Removes an endpoint established  by calls to `bind()` or `connect()`. The nanomsg library will try
+to deliver any outstanding outbound messages to the endpoint for the time specified by `linger`.
+
+```js
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nanomsg._bindings" id="apidoc.module.nanomsg._bindings">module nanomsg._bindings</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.Bind" id="apidoc.element.nanomsg._bindings.Bind">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Bind
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Bind = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.Chan" id="apidoc.element.nanomsg._bindings.Chan">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Chan
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Chan = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.Close" id="apidoc.element.nanomsg._bindings.Close">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Close = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.Connect" id="apidoc.element.nanomsg._bindings.Connect">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Connect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Connect = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.DeviceWorker" id="apidoc.element.nanomsg._bindings.DeviceWorker">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>DeviceWorker
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">DeviceWorker = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.Err" id="apidoc.element.nanomsg._bindings.Err">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Err
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Err = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.Errno" id="apidoc.element.nanomsg._bindings.Errno">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Errno
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Errno = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.Getopt" id="apidoc.element.nanomsg._bindings.Getopt">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Getopt
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Getopt = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.PollSocket" id="apidoc.element.nanomsg._bindings.PollSocket">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>PollSocket
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">PollSocket = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.PollStop" id="apidoc.element.nanomsg._bindings.PollStop">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>PollStop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">PollStop = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.Recv" id="apidoc.element.nanomsg._bindings.Recv">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Recv
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Recv = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.Send" id="apidoc.element.nanomsg._bindings.Send">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Send
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Send = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.Setopt" id="apidoc.element.nanomsg._bindings.Setopt">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Setopt
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Setopt = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.Shutdown" id="apidoc.element.nanomsg._bindings.Shutdown">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Shutdown
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Shutdown = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.Socket" id="apidoc.element.nanomsg._bindings.Socket">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Socket
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Socket = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.Symbol" id="apidoc.element.nanomsg._bindings.Symbol">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Symbol
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Symbol = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.SymbolInfo" id="apidoc.element.nanomsg._bindings.SymbolInfo">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>SymbolInfo
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SymbolInfo = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg._bindings.Term" id="apidoc.element.nanomsg._bindings.Term">
+        function <span class="apidocSignatureSpan">nanomsg._bindings.</span>Term
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Term = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nanomsg.common" id="apidoc.module.nanomsg.common">module nanomsg.common</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nanomsg.common.createMsg" id="apidoc.element.nanomsg.common.createMsg">
+        function <span class="apidocSignatureSpan">nanomsg.common.</span>createMsg
+        <span class="apidocSignatureSpan">(msgType, sz)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createMsg = function (msgType, sz) {
+  var buf;
+  switch (msgType) {
+    case '--buffer':
+      buf = new Buffer(sz);
+      buf.fill('o');
+      break;
+    case '--string':
+      buf = new Array(sz + 1).join('o');
+      break;
+    default:
+      console.err('Unspecified msg type not supported, please use --buffer or --string.');
+      process.exit(1);
+  }
+  return buf;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
