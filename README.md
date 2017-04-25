@@ -1,6 +1,6 @@
 # npmdoc-nanomsg
 
-#### api documentation for  [nanomsg (v3.3.0)](https://github.com/nickdesaulniers/node-nanomsg#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-nanomsg.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-nanomsg) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-nanomsg.svg)](https://travis-ci.org/npmdoc/node-npmdoc-nanomsg)
+#### basic api documentation for  [nanomsg (v3.3.0)](https://github.com/nickdesaulniers/node-nanomsg#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-nanomsg.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-nanomsg) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-nanomsg.svg)](https://travis-ci.org/npmdoc/node-npmdoc-nanomsg)
 
 #### Node bindings for nanomsg
 
@@ -128,7 +128,8 @@
         "symbols": "cd test && ruby mksymbols.rb > symbols.js",
         "test": "find test/*.js test/standalone/*.js | xargs -n 1 node | node_modules/tap-nyan/bin/cmd.js"
     },
-    "version": "3.3.0"
+    "version": "3.3.0",
+    "bin": {}
 }
 ```
 
