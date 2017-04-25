@@ -1587,23 +1587,7 @@
     <li>description and source-code<pre class="apidocCodePre">function createSocket(type, opts) {
     return new Socket(type, opts);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-* only tested on linux, so other platforms are explicitly excluded at the moment (any help testing other OS is welcome)
-
-### check it out:
-
-```js
-var nano = require(&#x27;nanomsg&#x27;);
-
-var pub = nano.<span class="apidocCodeKeywordSpan">socket</span>(&#x27;pub&#x27;);
-var sub = nano.socket(&#x27;sub&#x27;);
-
-var addr = &#x27;tcp://127.0.0.1:7789&#x27;
-pub.bind(addr);
-sub.connect(addr);
-
-sub.on(&#x27;data&#x27;, function (buf) {
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2058,23 +2042,7 @@ sub.on(&#x27;data&#x27;, function (buf) {
     <li>description and source-code<pre class="apidocCodePre">bind = function (addr) {
   return this.bound[addr] = this._protect(nn.Bind( this.binding, addr ));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-```js
-var nano = require(&#x27;nanomsg&#x27;);
-
-var pub = nano.socket(&#x27;pub&#x27;);
-var sub = nano.socket(&#x27;sub&#x27;);
-
-var addr = &#x27;tcp://127.0.0.1:7789&#x27;
-pub.<span class="apidocCodeKeywordSpan">bind</span>(addr);
-sub.connect(addr);
-
-sub.on(&#x27;data&#x27;, function (buf) {
-  console.log(String(buf));
-  pub.close();
-  sub.close();
-});
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2093,33 +2061,7 @@ sub.on(&#x27;data&#x27;, function (buf) {
     throw new TypeError(&#x27;chan requires an Array&#x27;);
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-* `&#x27;rcvtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvtimeoduration)
-* `&#x27;reconn&#x27;` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketreconnduration)
-* `&#x27;maxreconn&#x27;` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketmaxreconnduration)
-* `&#x27;sndprio&#x27;` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndpriopriority)
-* `&#x27;rcvprio&#x27;` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvpriopriority)
-* `&#x27;ipv6&#x27;` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketipv6boolean)
-* `&#x27;rcvmaxsize&#x27;` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
--nanomsg#socketrcvmaxsizesize)
-* `&#x27;chan&#x27;` *(Array, default: `[&#x27;&#x27;]`)*: see [`socket.<span class="apidocCodeKeywordSpan">chan</span>(Array)`](
-https://github.com/nickdesaulniers/node-nanomsg#socketchanarray)
-* `&#x27;wsopt&#x27;` *(String, default: `&#x27;binary&#x27;`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
--nanomsg#socketwsoptstr)
-* `&#x27;dontwait&#x27;` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
-nanomsg#socketdontwaitboolean)
-
-### socket.shutdown(address)
-
-*(Function, param: String)*: Removes an endpoint established  by calls to `bind()` or `connect()`. The nanomsg library will try
-to deliver any outstanding outbound messages to the endpoint for the time specified by `linger`.
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2153,23 +2095,7 @@ to deliver any outstanding outbound messages to the endpoint for the time specif
     // error?
     return this.closed_status;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-var addr = &#x27;tcp://127.0.0.1:7789&#x27;
-pub.bind(addr);
-sub.connect(addr);
-
-sub.on(&#x27;data&#x27;, function (buf) {
-  console.log(String(buf));
-  pub.<span class="apidocCodeKeywordSpan">close</span>();
-  sub.close();
-});
-
-setTimeout(function () {
-  pub.send(&#x22;Hello from nanomsg!&#x22;);
-}, 100);
-```
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2184,22 +2110,7 @@ setTimeout(function () {
     <li>description and source-code<pre class="apidocCodePre">connect = function (addr) {
   return this.connected[addr] = this._protect(nn.Connect( this.binding, addr ));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-var nano = require(&#x27;nanomsg&#x27;);
-
-var pub = nano.socket(&#x27;pub&#x27;);
-var sub = nano.socket(&#x27;sub&#x27;);
-
-var addr = &#x27;tcp://127.0.0.1:7789&#x27;
-pub.bind(addr);
-sub.<span class="apidocCodeKeywordSpan">connect</span>(addr);
-
-sub.on(&#x27;data&#x27;, function (buf) {
-  console.log(String(buf));
-  pub.close();
-  sub.close();
-});
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2224,32 +2135,7 @@ sub.on(&#x27;data&#x27;, function (buf) {
     return Boolean(this.nndontwait);
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-* `&#x27;maxreconn&#x27;` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketmaxreconnduration)
-* `&#x27;sndprio&#x27;` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndpriopriority)
-* `&#x27;rcvprio&#x27;` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvpriopriority)
-* `&#x27;ipv6&#x27;` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketipv6boolean)
-* `&#x27;rcvmaxsize&#x27;` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
--nanomsg#socketrcvmaxsizesize)
-* `&#x27;chan&#x27;` *(Array, default: `[&#x27;&#x27;]`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketchanarray)
-* `&#x27;wsopt&#x27;` *(String, default: `&#x27;binary&#x27;`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
--nanomsg#socketwsoptstr)
-* `&#x27;dontwait&#x27;` *(boolean, default: `true`)*: see [`socket.<span class="apidocCodeKeywordSpan">dontwait</span>(boolean)`](
-https://github.com/nickdesaulniers/node-nanomsg#socketdontwaitboolean)
-
-### socket.shutdown(address)
-
-*(Function, param: String)*: Removes an endpoint established  by calls to `bind()` or `connect()`. The nanomsg library will try
-to deliver any outstanding outbound messages to the endpoint for the time specified by `linger`.
-
-```js
-socket.shutdown(&#x27;tcp://127.0.0.1:5555&#x27;);
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2268,19 +2154,7 @@ socket.shutdown(&#x27;tcp://127.0.0.1:5555&#x27;);
     }
     this._stopPollSend();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-var i = 0;
-s.on(&#x27;data&#x27;, function (data) {
-    assert.equal(data.length, sz);
-    var nbytes = s.send(data);
-    assert.equal(nbytes, sz);
-    if (++i === rts) {
-        s.<span class="apidocCodeKeywordSpan">flush</span>();
-        s.close();
-    }
-});
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2327,34 +2201,7 @@ s.on(&#x27;data&#x27;, function (data) {
     }
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-* `&#x27;rcvbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketrcvbufsize)
-* `&#x27;sndtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndtimeoduration)
-* `&#x27;rcvtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvtimeoduration)
-* `&#x27;reconn&#x27;` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketreconnduration)
-* `&#x27;maxreconn&#x27;` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketmaxreconnduration)
-* `&#x27;sndprio&#x27;` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndpriopriority)
-* `&#x27;rcvprio&#x27;` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvpriopriority)
-* `&#x27;ipv6&#x27;` *(Boolean, default: `false`)*: see [`socket.<span class="apidocCodeKeywordSpan">ipv6</span>(boolean)`](https
-://github.com/nickdesaulniers/node-nanomsg#socketipv6boolean)
-* `&#x27;rcvmaxsize&#x27;` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
--nanomsg#socketrcvmaxsizesize)
-* `&#x27;chan&#x27;` *(Array, default: `[&#x27;&#x27;]`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketchanarray)
-* `&#x27;wsopt&#x27;` *(String, default: `&#x27;binary&#x27;`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
--nanomsg#socketwsoptstr)
-* `&#x27;dontwait&#x27;` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
-nanomsg#socketdontwaitboolean)
-
-### socket.shutdown(address)
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2377,35 +2224,7 @@ nanomsg#socketdontwaitboolean)
 
   throw new Error(nn.Err() + &#x27;: &#x27; + this.type + option + &#x27;@&#x27; + value + &#x27;\n&#x27;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-#### `options`
-* `&#x27;raw&#x27;` *(Boolean, default: `false`)*: determines the domain of the socket. `AF_SP`, the default, creates a standard
- full-blown SP socket. `AF_SP_RAW` family sockets operate over internal network protocols and interfaces. Raw sockets omit the end
--to-end functionality found in `AF_SP` sockets and thus can be used to implement intermediary devices in SP topologies, see [nanomsg
- docs](http://nanomsg.org/v0.5/nn_socket.3.html) or consult your man page entry `socket(2)` for more info.
-```js
-//ex. starting raw sockets
-nano.socket(&#x27;bus&#x27;, { raw: true } );
-```
-* `&#x27;tcpnodelay&#x27;` *(Boolean, default: `false`)*: see [`socket.tcpnodelay(boolean)`](https://github.com/nickdesaulniers/
-node-nanomsg#sockettcpnodelayboolean)
-* `&#x27;linger&#x27;` *(Number, default: `1000`)*: see [`socket.<span class="apidocCodeKeywordSpan">linger</span>(duration)`](https
-://github.com/nickdesaulniers/node-nanomsg#socketlingerduration)
-* `&#x27;sndbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketsndbufsize)
-* `&#x27;rcvbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketrcvbufsize)
-* `&#x27;sndtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndtimeoduration)
-* `&#x27;rcvtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvtimeoduration)
-* `&#x27;reconn&#x27;` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketreconnduration)
-* `&#x27;maxreconn&#x27;` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketmaxreconnduration)
-* `&#x27;sndprio&#x27;` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndpriopriority)
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2428,38 +2247,7 @@ node-nanomsg#sockettcpnodelayboolean)
 
   throw new Error(nn.Err() + &#x27;: &#x27; + this.type + option + &#x27;@&#x27; + value + &#x27;\n&#x27;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-* `&#x27;tcpnodelay&#x27;` *(Boolean, default: `false`)*: see [`socket.tcpnodelay(boolean)`](https://github.com/nickdesaulniers/
-node-nanomsg#sockettcpnodelayboolean)
-* `&#x27;linger&#x27;` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketlingerduration)
-* `&#x27;sndbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketsndbufsize)
-* `&#x27;rcvbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketrcvbufsize)
-* `&#x27;sndtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndtimeoduration)
-* `&#x27;rcvtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvtimeoduration)
-* `&#x27;reconn&#x27;` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketreconnduration)
-* `&#x27;maxreconn&#x27;` *(Number, default: `0`)*: see [`socket.<span class="apidocCodeKeywordSpan">maxreconn</span>(duration)`](
-https://github.com/nickdesaulniers/node-nanomsg#socketmaxreconnduration)
-* `&#x27;sndprio&#x27;` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndpriopriority)
-* `&#x27;rcvprio&#x27;` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvpriopriority)
-* `&#x27;ipv6&#x27;` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketipv6boolean)
-* `&#x27;rcvmaxsize&#x27;` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
--nanomsg#socketrcvmaxsizesize)
-* `&#x27;chan&#x27;` *(Array, default: `[&#x27;&#x27;]`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketchanarray)
-* `&#x27;wsopt&#x27;` *(String, default: `&#x27;binary&#x27;`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
--nanomsg#socketwsoptstr)
-* `&#x27;dontwait&#x27;` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
-nanomsg#socketdontwaitboolean)
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2482,34 +2270,7 @@ nanomsg#socketdontwaitboolean)
 
   throw new Error(nn.Err() + &#x27;: &#x27; + this.type + option + &#x27;@&#x27; + value + &#x27;\n&#x27;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-```js
-//ex. starting raw sockets
-nano.socket(&#x27;bus&#x27;, { raw: true } );
-```
-* `&#x27;tcpnodelay&#x27;` *(Boolean, default: `false`)*: see [`socket.tcpnodelay(boolean)`](https://github.com/nickdesaulniers/
-node-nanomsg#sockettcpnodelayboolean)
-* `&#x27;linger&#x27;` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketlingerduration)
-* `&#x27;sndbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketsndbufsize)
-* `&#x27;rcvbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.<span class="apidocCodeKeywordSpan">rcvbuf</span
->(size)`](https://github.com/nickdesaulniers/node-nanomsg#socketrcvbufsize)
-* `&#x27;sndtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndtimeoduration)
-* `&#x27;rcvtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvtimeoduration)
-* `&#x27;reconn&#x27;` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketreconnduration)
-* `&#x27;maxreconn&#x27;` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketmaxreconnduration)
-* `&#x27;sndprio&#x27;` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndpriopriority)
-* `&#x27;rcvprio&#x27;` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvpriopriority)
-* `&#x27;ipv6&#x27;` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketipv6boolean)
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2532,35 +2293,7 @@ node-nanomsg#sockettcpnodelayboolean)
 
   throw new Error(nn.Err() + &#x27;: &#x27; + this.type + option + &#x27;@&#x27; + value + &#x27;\n&#x27;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-* `&#x27;sndtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndtimeoduration)
-* `&#x27;rcvtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvtimeoduration)
-* `&#x27;reconn&#x27;` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketreconnduration)
-* `&#x27;maxreconn&#x27;` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketmaxreconnduration)
-* `&#x27;sndprio&#x27;` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndpriopriority)
-* `&#x27;rcvprio&#x27;` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvpriopriority)
-* `&#x27;ipv6&#x27;` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketipv6boolean)
-* `&#x27;rcvmaxsize&#x27;` *(Number, default: `false`)*: see [`socket.<span class="apidocCodeKeywordSpan">rcvmaxsize</span>(size
-)`](https://github.com/nickdesaulniers/node-nanomsg#socketrcvmaxsizesize)
-* `&#x27;chan&#x27;` *(Array, default: `[&#x27;&#x27;]`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketchanarray)
-* `&#x27;wsopt&#x27;` *(String, default: `&#x27;binary&#x27;`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
--nanomsg#socketwsoptstr)
-* `&#x27;dontwait&#x27;` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
-nanomsg#socketdontwaitboolean)
-
-### socket.shutdown(address)
-
-*(Function, param: String)*: Removes an endpoint established  by calls to `bind()` or `connect()`. The nanomsg library will try
-to deliver any outstanding outbound messages to the endpoint for the time specified by `linger`.
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2583,36 +2316,7 @@ to deliver any outstanding outbound messages to the endpoint for the time specif
 
   throw new Error(nn.Err() + &#x27;: &#x27; + this.type + option + &#x27;@&#x27; + value + &#x27;\n&#x27;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-* `&#x27;sndbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketsndbufsize)
-* `&#x27;rcvbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketrcvbufsize)
-* `&#x27;sndtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndtimeoduration)
-* `&#x27;rcvtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvtimeoduration)
-* `&#x27;reconn&#x27;` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketreconnduration)
-* `&#x27;maxreconn&#x27;` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketmaxreconnduration)
-* `&#x27;sndprio&#x27;` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndpriopriority)
-* `&#x27;rcvprio&#x27;` *(Number, default: `0`)*: see [`socket.<span class="apidocCodeKeywordSpan">rcvprio</span>(priority)`](https
-://github.com/nickdesaulniers/node-nanomsg#socketrcvpriopriority)
-* `&#x27;ipv6&#x27;` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketipv6boolean)
-* `&#x27;rcvmaxsize&#x27;` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
--nanomsg#socketrcvmaxsizesize)
-* `&#x27;chan&#x27;` *(Array, default: `[&#x27;&#x27;]`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketchanarray)
-* `&#x27;wsopt&#x27;` *(String, default: `&#x27;binary&#x27;`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
--nanomsg#socketwsoptstr)
-* `&#x27;dontwait&#x27;` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
-nanomsg#socketdontwaitboolean)
-
-### socket.shutdown(address)
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2635,36 +2339,7 @@ nanomsg#socketdontwaitboolean)
 
   throw new Error(nn.Err() + &#x27;: &#x27; + this.type + option + &#x27;@&#x27; + value + &#x27;\n&#x27;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-nano.socket(&#x27;bus&#x27;, { raw: true } );
-```
-* `&#x27;tcpnodelay&#x27;` *(Boolean, default: `false`)*: see [`socket.tcpnodelay(boolean)`](https://github.com/nickdesaulniers/
-node-nanomsg#sockettcpnodelayboolean)
-* `&#x27;linger&#x27;` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketlingerduration)
-* `&#x27;sndbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketsndbufsize)
-* `&#x27;rcvbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketrcvbufsize)
-* `&#x27;sndtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndtimeoduration)
-* `&#x27;rcvtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.<span class="apidocCodeKeywordSpan">rcvtimeo</span>(duration)`](
-https://github.com/nickdesaulniers/node-nanomsg#socketrcvtimeoduration)
-* `&#x27;reconn&#x27;` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketreconnduration)
-* `&#x27;maxreconn&#x27;` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketmaxreconnduration)
-* `&#x27;sndprio&#x27;` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndpriopriority)
-* `&#x27;rcvprio&#x27;` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvpriopriority)
-* `&#x27;ipv6&#x27;` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketipv6boolean)
-* `&#x27;rcvmaxsize&#x27;` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
--nanomsg#socketrcvmaxsizesize)
-* `&#x27;chan&#x27;` *(Array, default: `[&#x27;&#x27;]`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketchanarray)
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2687,37 +2362,7 @@ https://github.com/nickdesaulniers/node-nanomsg#socketrcvtimeoduration)
 
   throw new Error(nn.Err() + &#x27;: &#x27; + this.type + option + &#x27;@&#x27; + value + &#x27;\n&#x27;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-```
-* `&#x27;tcpnodelay&#x27;` *(Boolean, default: `false`)*: see [`socket.tcpnodelay(boolean)`](https://github.com/nickdesaulniers/
-node-nanomsg#sockettcpnodelayboolean)
-* `&#x27;linger&#x27;` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketlingerduration)
-* `&#x27;sndbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketsndbufsize)
-* `&#x27;rcvbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketrcvbufsize)
-* `&#x27;sndtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndtimeoduration)
-* `&#x27;rcvtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvtimeoduration)
-* `&#x27;reconn&#x27;` *(Number, default: `100`)*: see [`socket.<span class="apidocCodeKeywordSpan">reconn</span>(duration)`](https
-://github.com/nickdesaulniers/node-nanomsg#socketreconnduration)
-* `&#x27;maxreconn&#x27;` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketmaxreconnduration)
-* `&#x27;sndprio&#x27;` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndpriopriority)
-* `&#x27;rcvprio&#x27;` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvpriopriority)
-* `&#x27;ipv6&#x27;` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketipv6boolean)
-* `&#x27;rcvmaxsize&#x27;` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
--nanomsg#socketrcvmaxsizesize)
-* `&#x27;chan&#x27;` *(Array, default: `[&#x27;&#x27;]`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketchanarray)
-* `&#x27;wsopt&#x27;` *(String, default: `&#x27;binary&#x27;`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
--nanomsg#socketwsoptstr)
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2741,23 +2386,7 @@ node-nanomsg#sockettcpnodelayboolean)
     }
   };
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-*(Function, param: Array of Strings, default: `[&#x27;&#x27;]`)*: Allows for sub sockets
-to filter messages based on a prefix. Not applicable to non sub sockets.
-
-By default, all sub sockets are subscribed to the `&#x27;&#x27;` channel.  Once you opt
-in to filtering on a channel, you are unsubscribed from `&#x27;&#x27;`.
-
-### socket.<span class="apidocCodeKeywordSpan">rmchan</span>(String)
-
-*(Function, param: String)*: Allows for sub sockets to remove channel filters.
-Not applicable to non sub sockets. This function is variadic; you can pass
-multiple strings and all will be unfiltered.
-
-If you unsubscribe from the default channel, `&#x27;&#x27;`, without subscribing to any
-new channels, your sub socket will stop receiving messages.
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2774,22 +2403,7 @@ new channels, your sub socket will stop receiving messages.
     this._startPollSend();
     return buf.length;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-sub.on(&#x27;data&#x27;, function (buf) {
-  console.log(String(buf));
-  pub.close();
-  sub.close();
-});
-
-setTimeout(function () {
-  pub.<span class="apidocCodeKeywordSpan">send</span>(&#x22;Hello from nanomsg!&#x22;);
-}, 100);
-```
-
-# API
-
-### nano.socket(type, [options,])
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2828,29 +2442,7 @@ setTimeout(function () {
     return this._protect(nn.Shutdown(this.binding, eid));
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-* `&#x27;rcvprio&#x27;` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvpriopriority)
-* `&#x27;ipv6&#x27;` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketipv6boolean)
-* `&#x27;rcvmaxsize&#x27;` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
--nanomsg#socketrcvmaxsizesize)
-* `&#x27;chan&#x27;` *(Array, default: `[&#x27;&#x27;]`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketchanarray)
-* `&#x27;wsopt&#x27;` *(String, default: `&#x27;binary&#x27;`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
--nanomsg#socketwsoptstr)
-* `&#x27;dontwait&#x27;` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
-nanomsg#socketdontwaitboolean)
-
-### socket.<span class="apidocCodeKeywordSpan">shutdown</span>(address)
-
-*(Function, param: String)*: Removes an endpoint established  by calls to `bind()` or `connect()`. The nanomsg library will try
-to deliver any outstanding outbound messages to the endpoint for the time specified by `linger`.
-
-```js
-socket.shutdown(&#x27;tcp://127.0.0.1:5555&#x27;);
-```
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2873,36 +2465,7 @@ socket.shutdown(&#x27;tcp://127.0.0.1:5555&#x27;);
 
   throw new Error(nn.Err() + &#x27;: &#x27; + this.type + option + &#x27;@&#x27; + value + &#x27;\n&#x27;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-* `&#x27;raw&#x27;` *(Boolean, default: `false`)*: determines the domain of the socket. `AF_SP`, the default, creates a standard
- full-blown SP socket. `AF_SP_RAW` family sockets operate over internal network protocols and interfaces. Raw sockets omit the end
--to-end functionality found in `AF_SP` sockets and thus can be used to implement intermediary devices in SP topologies, see [nanomsg
- docs](http://nanomsg.org/v0.5/nn_socket.3.html) or consult your man page entry `socket(2)` for more info.
-```js
-//ex. starting raw sockets
-nano.socket(&#x27;bus&#x27;, { raw: true } );
-```
-* `&#x27;tcpnodelay&#x27;` *(Boolean, default: `false`)*: see [`socket.tcpnodelay(boolean)`](https://github.com/nickdesaulniers/
-node-nanomsg#sockettcpnodelayboolean)
-* `&#x27;linger&#x27;` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketlingerduration)
-* `&#x27;sndbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.<span class="apidocCodeKeywordSpan">sndbuf</span
->(size)`](https://github.com/nickdesaulniers/node-nanomsg#socketsndbufsize)
-* `&#x27;rcvbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketrcvbufsize)
-* `&#x27;sndtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndtimeoduration)
-* `&#x27;rcvtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvtimeoduration)
-* `&#x27;reconn&#x27;` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketreconnduration)
-* `&#x27;maxreconn&#x27;` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketmaxreconnduration)
-* `&#x27;sndprio&#x27;` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndpriopriority)
-* `&#x27;rcvprio&#x27;` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvpriopriority)
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2925,36 +2488,7 @@ node-nanomsg#sockettcpnodelayboolean)
 
   throw new Error(nn.Err() + &#x27;: &#x27; + this.type + option + &#x27;@&#x27; + value + &#x27;\n&#x27;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-* `&#x27;linger&#x27;` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketlingerduration)
-* `&#x27;sndbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketsndbufsize)
-* `&#x27;rcvbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketrcvbufsize)
-* `&#x27;sndtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndtimeoduration)
-* `&#x27;rcvtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvtimeoduration)
-* `&#x27;reconn&#x27;` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketreconnduration)
-* `&#x27;maxreconn&#x27;` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketmaxreconnduration)
-* `&#x27;sndprio&#x27;` *(Number, default: `0`)*: see [`socket.<span class="apidocCodeKeywordSpan">sndprio</span>(priority)`](https
-://github.com/nickdesaulniers/node-nanomsg#socketsndpriopriority)
-* `&#x27;rcvprio&#x27;` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvpriopriority)
-* `&#x27;ipv6&#x27;` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketipv6boolean)
-* `&#x27;rcvmaxsize&#x27;` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
--nanomsg#socketrcvmaxsizesize)
-* `&#x27;chan&#x27;` *(Array, default: `[&#x27;&#x27;]`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketchanarray)
-* `&#x27;wsopt&#x27;` *(String, default: `&#x27;binary&#x27;`)*: see [`socket.wsopt(str)`](https://github.com/nickdesaulniers/node
--nanomsg#socketwsoptstr)
-* `&#x27;dontwait&#x27;` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
-nanomsg#socketdontwaitboolean)
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2977,35 +2511,7 @@ nanomsg#socketdontwaitboolean)
 
   throw new Error(nn.Err() + &#x27;: &#x27; + this.type + option + &#x27;@&#x27; + value + &#x27;\n&#x27;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-//ex. starting raw sockets
-nano.socket(&#x27;bus&#x27;, { raw: true } );
-```
-* `&#x27;tcpnodelay&#x27;` *(Boolean, default: `false`)*: see [`socket.tcpnodelay(boolean)`](https://github.com/nickdesaulniers/
-node-nanomsg#sockettcpnodelayboolean)
-* `&#x27;linger&#x27;` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketlingerduration)
-* `&#x27;sndbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketsndbufsize)
-* `&#x27;rcvbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketrcvbufsize)
-* `&#x27;sndtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.<span class="apidocCodeKeywordSpan">sndtimeo</span>(duration)`](
-https://github.com/nickdesaulniers/node-nanomsg#socketsndtimeoduration)
-* `&#x27;rcvtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvtimeoduration)
-* `&#x27;reconn&#x27;` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketreconnduration)
-* `&#x27;maxreconn&#x27;` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketmaxreconnduration)
-* `&#x27;sndprio&#x27;` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndpriopriority)
-* `&#x27;rcvprio&#x27;` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvpriopriority)
-* `&#x27;ipv6&#x27;` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketipv6boolean)
-* `&#x27;rcvmaxsize&#x27;` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
--nanomsg#socketrcvmaxsizesize)
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -3037,34 +2543,7 @@ https://github.com/nickdesaulniers/node-nanomsg#socketsndtimeoduration)
     }
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-#### `options`
-* `&#x27;raw&#x27;` *(Boolean, default: `false`)*: determines the domain of the socket. `AF_SP`, the default, creates a standard
- full-blown SP socket. `AF_SP_RAW` family sockets operate over internal network protocols and interfaces. Raw sockets omit the end
--to-end functionality found in `AF_SP` sockets and thus can be used to implement intermediary devices in SP topologies, see [nanomsg
- docs](http://nanomsg.org/v0.5/nn_socket.3.html) or consult your man page entry `socket(2)` for more info.
-```js
-//ex. starting raw sockets
-nano.socket(&#x27;bus&#x27;, { raw: true } );
-```
-* `&#x27;tcpnodelay&#x27;` *(Boolean, default: `false`)*: see [`socket.<span class="apidocCodeKeywordSpan">tcpnodelay</span>(boolean
-)`](https://github.com/nickdesaulniers/node-nanomsg#sockettcpnodelayboolean)
-* `&#x27;linger&#x27;` *(Number, default: `1000`)*: see [`socket.linger(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketlingerduration)
-* `&#x27;sndbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.sndbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketsndbufsize)
-* `&#x27;rcvbuf&#x27;` *(Number, size in bytes, default: `128kB`)*: see [`socket.rcvbuf(size)`](https://github.com/nickdesaulniers
-/node-nanomsg#socketrcvbufsize)
-* `&#x27;sndtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.sndtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndtimeoduration)
-* `&#x27;rcvtimeo&#x27;` *(Number, default: `-1`)*: see [`socket.rcvtimeo(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvtimeoduration)
-* `&#x27;reconn&#x27;` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketreconnduration)
-* `&#x27;maxreconn&#x27;` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketmaxreconnduration)
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -3094,33 +2573,7 @@ nano.socket(&#x27;bus&#x27;, { raw: true } );
     }
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-* `&#x27;reconn&#x27;` *(Number, default: `100`)*: see [`socket.reconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketreconnduration)
-* `&#x27;maxreconn&#x27;` *(Number, default: `0`)*: see [`socket.maxreconn(duration)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketmaxreconnduration)
-* `&#x27;sndprio&#x27;` *(Number, default: `0`)*: see [`socket.sndprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketsndpriopriority)
-* `&#x27;rcvprio&#x27;` *(Number, default: `0`)*: see [`socket.rcvprio(priority)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketrcvpriopriority)
-* `&#x27;ipv6&#x27;` *(Boolean, default: `false`)*: see [`socket.ipv6(boolean)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketipv6boolean)
-* `&#x27;rcvmaxsize&#x27;` *(Number, default: `false`)*: see [`socket.rcvmaxsize(size)`](https://github.com/nickdesaulniers/node
--nanomsg#socketrcvmaxsizesize)
-* `&#x27;chan&#x27;` *(Array, default: `[&#x27;&#x27;]`)*: see [`socket.chan(Array)`](https://github.com/nickdesaulniers/node-nanomsg
-#socketchanarray)
-* `&#x27;wsopt&#x27;` *(String, default: `&#x27;binary&#x27;`)*: see [`socket.<span class="apidocCodeKeywordSpan">wsopt</span>(str
-)`](https://github.com/nickdesaulniers/node-nanomsg#socketwsoptstr)
-* `&#x27;dontwait&#x27;` *(boolean, default: `true`)*: see [`socket.dontwait(boolean)`](https://github.com/nickdesaulniers/node-
-nanomsg#socketdontwaitboolean)
-
-### socket.shutdown(address)
-
-*(Function, param: String)*: Removes an endpoint established  by calls to `bind()` or `connect()`. The nanomsg library will try
-to deliver any outstanding outbound messages to the endpoint for the time specified by `linger`.
-
-```js
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
